@@ -20,7 +20,7 @@ import java.io.*;
 import java.security.GeneralSecurityException;
 import java.util.*;
 
-public class GoogleAPIUtil {
+public class GoogleSheetAPIUtil {
 
     private static final String APPLICATION_NAME = "Google Sheets API Java Quickstart";
     private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
@@ -44,7 +44,7 @@ public class GoogleAPIUtil {
     private static Credential getCredentials(final NetHttpTransport HTTP_TRANSPORT)
             throws IOException {
         // Load client secrets.
-        InputStream in = GoogleAPIUtil.class.getResourceAsStream(CREDENTIALS_FILE_PATH);
+        InputStream in = GoogleSheetAPIUtil.class.getResourceAsStream(CREDENTIALS_FILE_PATH);
         if (in == null) {
             throw new FileNotFoundException("Resource not found: " + CREDENTIALS_FILE_PATH);
         }
@@ -65,7 +65,6 @@ public class GoogleAPIUtil {
 
     public void getRecordsFromSheet(
             String spreadsheetId,
-            Integer sheetId,
             String range,
             Integer column1,
             Integer column2)
