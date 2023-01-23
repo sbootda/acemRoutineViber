@@ -1,5 +1,5 @@
 package com.acem.demo.entity.enums;
 
-public enum SubSectionEnum {
+public enum GroupEnum {
     BOTH, I, II
 }
