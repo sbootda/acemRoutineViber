@@ -12,6 +12,7 @@ import lombok.Setter;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import java.io.Serializable;
 import java.util.List;
 
 
@@ -21,7 +22,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "SCHEDULES")
-public class Schedule {
+public class Schedule implements Serializable {
 
     @Id
     @Column(name="ID", nullable = false)
@@ -43,6 +44,9 @@ public class Schedule {
     @Column(name = "DAY", nullable = false)
     @Enumerated(EnumType.STRING)
     private DayEnum day;
+
+    @Column(name="CODE",length = 100, nullable = false, unique = true)
+    private String code;
 
     @OneToMany(targetEntity = Lecture.class,cascade = CascadeType.ALL)
     @JoinColumn(name = "SCHEDULE_ID", referencedColumnName = "ID")

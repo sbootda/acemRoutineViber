@@ -5,7 +5,7 @@ import com.acem.demo.response.Response;
 
 public interface ScheduleService {
 
-    Response getLectures(Schedule schedule);
+    Response get(Schedule schedule);
     Response save(Schedule schedule);
 
 }
