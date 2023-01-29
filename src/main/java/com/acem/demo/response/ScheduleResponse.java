@@ -1,6 +1,7 @@
 package com.acem.demo.response;
 
 import com.acem.demo.entity.Lecture;
+import com.acem.demo.entity.enums.SectionEnum;
 import lombok.*;
 
 import java.io.Serializable;
@@ -10,30 +11,30 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ScheduleResponse implements Serializable {
-    private Integer batch;
-    private Integer course;
-    private Integer section;
-    private Integer day;
+    private String batch;
+    private String course;
+    private String section;
+    private String day;
     private List<LectureResponse> lectures;
 
-    public ScheduleResponse batch(Integer batch) {
+    public ScheduleResponse batch(String batch) {
         this.batch = batch;
         return this;
     }
 
-    public ScheduleResponse course(Integer course) {
+    public ScheduleResponse course(String course) {
         this.course = course;
         return this;
 
     }
 
-    public ScheduleResponse section(Integer section) {
+    public ScheduleResponse section(String section) {
         this.section = section;
         return this;
 
     }
 
-    public ScheduleResponse day(Integer day) {
+    public ScheduleResponse day(String day) {
         this.day = day;
         return this;
     }

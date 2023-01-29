@@ -78,10 +78,10 @@ public class ScheduleServiceImpl implements ScheduleService {
                 lectures) {
             lectureResponseList.add(mapToLectureResponse(lecture));
         }
-        scheduleResponse.batch(schedule.getBatch().ordinal())
-                .course(schedule.getCourse().ordinal())
-                .section(schedule.getSection().ordinal())
-                .day(schedule.getDay().ordinal())
+        scheduleResponse.batch(schedule.getBatch().name())
+                .course(schedule.getCourse().name())
+                .section(schedule.getSection().name())
+                .day(schedule.getDay().name())
                 .lectures(lectureResponseList);
             return scheduleResponse;
     }
